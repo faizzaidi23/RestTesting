@@ -28,6 +28,18 @@ dependencies {
 	testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
 	testImplementation("org.springframework.security:spring-security-test")
 	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+    implementation("org.springframework.boot:spring-boot-starter-web")
+
+
+    //Dependencies for redis-->Using docker, The necessary dependencies are provided below
+    implementation("org.springframework.boot:spring-boot-starter-data-redis")
+    implementation("org.springframework.boot:spring-boot-starter-cache")
+
+
+    //Dependencies for the testing purposee
+    testImplementation("org.testcontainers:junit-jupiter:1.19.7")
+    testImplementation("org.testcontainers:mongodb:1.19.7")
+
 
     //spring security dependencies--> These powerful libraries handle most of the complex security logic especially password hashing and protecting the endpoints later on
     implementation("org.springframework.boot:spring-boot-starter-security")
