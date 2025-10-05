@@ -13,27 +13,24 @@ data class User(
     @Id
     val id: ObjectId = ObjectId.get(),
     val email: String,
-    // I've renamed this field for clarity, which we'll update in the next step
-    val password: String,
+    // Renamed this property to avoid the clash
+    val passwordHash: String,
     val roles: List<String> = listOf("ROLE_USER")
-) : UserDetails { // This is the crucial part that makes it compatible
-
-    // --- These methods are required by UserDetails ---
+) : UserDetails {
 
     override fun getAuthorities(): Collection<GrantedAuthority> {
         return roles.map { SimpleGrantedAuthority(it) }
     }
 
+    // This method now correctly returns the renamed property
     override fun getPassword(): String {
-        return password
+        return passwordHash
     }
 
     override fun getUsername(): String {
-        // We use the email as the username for Spring Security
         return email
     }
 
-    // You can leave these as true for now
     override fun isAccountNonExpired(): Boolean = true
     override fun isAccountNonLocked(): Boolean = true
     override fun isCredentialsNonExpired(): Boolean = true

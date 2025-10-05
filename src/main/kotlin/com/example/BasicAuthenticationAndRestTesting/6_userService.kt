@@ -8,7 +8,6 @@ This new service will now contain the logic
 or you can say all the services that the user can basically use
 
 */
-
 @Service
 
 class UserService(
@@ -29,7 +28,8 @@ class UserService(
         //Creating a new user object
         val newUser=User(
             email=request.email,
-            password = hashedPassword
+            // Update this to use the new property name
+            passwordHash = hashedPassword
         )
 
         //save the user and then return it
