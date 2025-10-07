@@ -154,8 +154,8 @@ fun RegisterScreen(navController:NavController, viewModel: AuthViewModel){
                     ){
                         if(viewModel.isLoading){
                             CircularProgressIndicator(
-                                modifier=Modifier.size(24.dp),
-                                color=Color.White
+                                modifier=Modifier.size(28.dp),
+                                color=Color.Yellow
                             )
                         }else{
                             Text("Create Account",fontSize=16.sp, fontWeight = FontWeight.Bold)
