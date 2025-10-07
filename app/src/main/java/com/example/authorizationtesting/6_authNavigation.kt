@@ -23,5 +23,10 @@ fun AuthNavigator(onLoginSuccess:()->Unit){
         composable("register"){
             RegisterScreen(navController = navController,viewModel=authViewModel)
         }
+
+        composable("home"){
+            HomeScreen()
+        }
+
     }
 }
