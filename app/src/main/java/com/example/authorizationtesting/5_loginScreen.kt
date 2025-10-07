@@ -103,7 +103,7 @@ fun LoginScreen(
             Spacer(modifier = Modifier.height(8.dp))
             Text(
                 text = "Enter your email and password to log in",
-                style = MaterialTheme.typography.bodyMedium,
+                style = MaterialTheme.typography.bodyLarge,
                 textAlign = TextAlign.Center,
                 modifier = Modifier.padding(horizontal = 38.dp)
             )
